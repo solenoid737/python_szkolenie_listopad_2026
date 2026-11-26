@@ -56,3 +56,7 @@ for marka,param in garaz.items():
 print(tabela)
 csv=tabela.get_csv_string()
 # print(csv)
+for marka,param in garaz.items():
+    rok=param[1][0]
+    naped=param[1][1]
+    print(f"marka: {marka}, rok produkcji: {rok}, naped: {naped}")
