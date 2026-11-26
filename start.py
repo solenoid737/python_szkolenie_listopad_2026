@@ -1,5 +1,6 @@
 print("Hello")
 from datetime import datetime, date, timedelta
+from tkinter import simpledialog
 # import cowsay
 # cowsay.cow("woof woof")
 # cowsay.dragon("miau miau")
@@ -67,12 +68,18 @@ from datetime import datetime, date, timedelta
 #     replace("ert","son") #backslash kontynuuje linijke w kolejnej
 # print(imie)       
 
+kurs = simpledialog.askfloat("Waluta","Podaj kurs Euro",
+                             minvalue=1.0, maxvalue=10.0,
+                             initialvalue=5.0)
 print("-" * 120)
 tekst_CSV="03/22/2025 jan KOWalski wypłata PLN: 8359"
 print("rok:",tekst_CSV[6:10],"miesiac:",tekst_CSV[3:5],"dzien:",tekst_CSV[0:2])
 imie_nazwisko=tekst_CSV[11:tekst_CSV.find(" wypłata")].title()
 print(imie_nazwisko)
-Euro_wyplata=float(tekst_CSV[tekst_CSV.find("PLN")+5:])/4.33
+if kurs == None:
+    kurs=1.0
+    print("Nie podano kursu, przyjęto 1.0")
+Euro_wyplata=float(tekst_CSV[tekst_CSV.find("PLN")+5:])/kurs
 print(f"{Euro_wyplata:.2f}")
 data = tekst_CSV[0:10]
 data_corr=datetime.strptime(data,"%m/%d/%Y")
