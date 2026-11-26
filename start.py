@@ -65,7 +65,7 @@ from datetime import datetime, date, timedelta
 # print(imie)
 # imie=imie.title(). \
 #     replace("ert","son") #backslash kontynuuje linijke w kolejnej
-# print(imie)
+# print(imie)     
 
 print("-" * 120)
 tekst_CSV="03/22/2025 jan KOWalski wypłata PLN: 8359"
